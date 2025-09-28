@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
+import Main from './main'
 
-const Navbar = () => {
+const Navbar = ({inputData ,setInputData}) => {
     const [menu ,setMenu]= useState(false)
+
+
     const HandleMenu = ()=>{
         setMenu(!menu)
     }
-  return (
+
+
+
+return (
     <div className='mx-10'>
 
     
@@ -19,7 +25,7 @@ const Navbar = () => {
         </div>
         <div>
         <div className='bg-gray-200 px-2 py-1 flex items-center rounded'>
-    <input type="text" placeholder='Search' className='focus:outline-0 rounded' />
+    <input onChange={(e)=>setInputData(e.target.value)} type="text" placeholder='Search' className='focus:outline-0 rounded' />
     <p>🔍</p>
     </div>
     </div>
@@ -31,13 +37,13 @@ const Navbar = () => {
     <div className='flex md:hidden justify-between mt-5'>
     <h1 className='text-2xl font-bold '>Samo</h1>
     <div className='bg-gray-200 px-2 py-1 flex items-center rounded'>
-    <input type="text" placeholder='Search' className='focus:outline-0 rounded' />
+    <input  onChange={(e)=>setInputData(e.target.value)} type="text" placeholder='Search' className='focus:outline-0 rounded' />
     <p>🔍</p>
     </div>
     <button onClick={HandleMenu} className='bg-gray-700 px-2 rounded py-2  text-white'>Menu</button> 
     </div>
-
-
+    
+    
     {
         menu &&
         <div className='flex flex-col space-y-2 rounded'>
@@ -46,6 +52,7 @@ const Navbar = () => {
     <a href="#">Service</a>
     <a href="#">Contact</a>
         </div>
+
     }
     </div>
   )
