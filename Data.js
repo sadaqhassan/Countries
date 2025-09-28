@@ -153,14 +153,7 @@ const countries = [
     description:
       "A diverse nation, the third-largest in the world, known for innovation and culture.",
   },
-  {
-    name: "Vietnam",
-    flag: "../src/assets/vietnam.png",
-    currency: "Vietnamese dong",
-    continent: "Asia",
-    description:
-      "A Southeast Asian country, famous for its history, cuisine, and Ha Long Bay.",
-  },
+  
 ];
 
 export default countries;
